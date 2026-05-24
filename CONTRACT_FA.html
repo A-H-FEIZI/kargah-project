@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قرارداد همکاری آموزشی — کارگاه</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'B Nazanin', 'BNazanin', 'Vazirmatn', 'B Mitra', 'Tahoma', serif;
+      font-size: 11.5pt;
+      line-height: 2;
+      color: #1a1a1a;
+      background: #f5f5f5;
+      direction: rtl;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      background: #fff;
+      padding: 18mm 18mm 14mm 18mm;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+      position: relative;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      text-align: center;
+      border-bottom: 2.5px double #1a1a1a;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .header h1 {
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 2px;
+    }
+
+    .header .subtitle {
+      font-size: 10pt;
+      color: #555;
+    }
+
+    .contract-number {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 10pt;
+      color: #555;
+      margin-bottom: 14px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 6px;
+    }
+
+    /* ===== PARTIES ===== */
+    .parties-box {
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      background: #fafafa;
+    }
+
+    .parties-box .party-row {
+      display: flex;
+      gap: 6px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .parties-box .party-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .party-label {
+      font-weight: 700;
+      white-space: nowrap;
+      font-size: 10.5pt;
+    }
+
+    .party-line {
+      flex: 1;
+      border-bottom: 1px dotted #888;
+      min-width: 60px;
+    }
+
+    /* ===== ARTICLES ===== */
+    .article {
+      margin-bottom: 10px;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .article-title {
+      font-weight: 700;
+      font-size: 11pt;
+      display: inline;
+    }
+
+    .article-body {
+      display: inline;
+      font-size: 11pt;
+    }
+
+    /* Compensation box */
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 6px 0 2px 0;
+      font-size: 10.5pt;
+    }
+
+    .comp-table td {
+      padding: 4px 10px;
+      border: 1px solid #ccc;
+    }
+
+    .comp-table td:first-child {
+      font-weight: 600;
+      background: #f5f5f5;
+      width: 45%;
+    }
+
+    .comp-table .note {
+      font-size: 9.5pt;
+      color: #555;
+      border: none;
+      padding-top: 2px;
+    }
+
+    /* ===== SIGNATURE ===== */
+    .signature-section {
+      margin-top: 14px;
+      border-top: 1.5px solid #1a1a1a;
+      padding-top: 10px;
+    }
+
+    .sig-title {
+      text-align: center;
+      font-weight: 700;
+      font-size: 10.5pt;
+      margin-bottom: 10px;
+    }
+
+    .sig-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .sig-block {
+      flex: 1;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 10pt;
+    }
+
+    .sig-block .sig-label {
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 6px;
+      font-size: 10.5pt;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+    }
+
+    .sig-field {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      gap: 4px;
+    }
+
+    .sig-field span:first-child {
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .sig-field .dotline {
+      flex: 1;
+      border-bottom: 1px dotted #888;
+      margin: 0 4px;
+    }
+
+    .sig-stamp {
+      height: 40px;
+      text-align: center;
+      border: 1px dashed #bbb;
+      border-radius: 3px;
+      color: #aaa;
+      font-size: 9pt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 6px;
+    }
+
+    /* ===== FOOTER NOTE ===== */
+    .footer-note {
+      text-align: center;
+      font-size: 8.5pt;
+      color: #888;
+      margin-top: 10px;
+      border-top: 1px solid #eee;
+      padding-top: 6px;
+    }
+
+    /* ===== PRINT ===== */
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: 100%;
+        margin: 0;
+        padding: 12mm 16mm 10mm 16mm;
+        box-shadow: none;
+        min-height: auto;
+      }
+
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>قرارداد همکاری آموزشی</h1>
+    <div class="subtitle">دوره کارآموزی توسعه نرم‌افزار — پروژه کارگاه</div>
+  </div>
+
+  <div class="contract-number">
+    <span>تاریخ انعقاد: ۳۱ / ۲ / ۱۴۰۵</span>
+  </div>
+
+  <!-- Parties -->
+  <div class="parties-box">
+    <div class="party-row">
+      <span class="party-label">کارفرما:</span>
+      <span style="font-size:11pt; white-space:nowrap;">محمد رضائی شریف‌آبادی</span>
+      <span class="party-line"></span>
+      <span style="white-space:nowrap; font-size:10pt;">شماره تماس:</span>
+      <span style="font-size:11pt; direction:ltr; display:inline-block; white-space:nowrap;">۰۹۱۲۰۳۹۷۸۸۱</span>
+    </div>
+    <div class="party-row">
+      <span class="party-label">کارآموز:</span>
+      <span style="font-size:11pt; white-space:nowrap;">امیرحسین فیضی</span>
+      <span class="party-line"></span>
+      <span style="white-space:nowrap; font-size:10pt;">شماره تماس:</span>
+      <span style="font-size:11pt; direction:ltr; display:inline-block; white-space:nowrap;">۰۹۹۱۲۳۶۹۰۸۲</span>
+    </div>
+  </div>
+
+  <!-- Article 1 -->
+  <div class="article">
+    <span class="article-title">ماده ۱ — موضوع قرارداد: </span>
+    <span class="article-body">شرکت در دوره آموزشی توسعه نرم‌افزار و مشارکت در ساخت پلتفرم «کارگاه» و سایر موارد مورد توافق طرفین، طبق برنامه و اولویت‌های ارائه‌شده توسط کارفرما در طول دوره.</span>
+  </div>
+
+  <!-- Article 2 -->
+  <div class="article">
+    <span class="article-title">ماده ۲ — مدت قرارداد: </span>
+    <span class="article-body">چهار (۴) ماه شمسی از تاریخ ۱ / ۳ / ۱۴۰۵ لغایت ۳۱ / ۷ / ۱۴۰۵. روزهای کاری: شنبه تا چهارشنبه.<br>محل انجام کار: دورکاری (آنلاین).</span>
+  </div>
+
+  <!-- Article 3 -->
+  <div class="article">
+    <span class="article-title">ماده ۳ — حق‌الزحمه و پاداش:</span>
+    <table class="comp-table">
+      <tr>
+        <td>دستمزد پایه ماهانه</td>
+        <td>۲۰,۰۰۰,۰۰۰ تومان — پرداخت در پایان هر ماه</td>
+      </tr>
+      <tr>
+        <td>پاداش عملکرد ماهانه</td>
+        <td>تا سقف ۲,۰۰۰,۰۰۰ تومان — بر اساس ارزیابی کارفرما</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="note">معیار پاداش: تحویل به‌موقع وظایف، کیفیت کد، ثبت تغییرات روزانه در گیت، و پیشرفت قابل اندازه‌گیری هر هفته.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Article 4 -->
+  <div class="article">
+    <span class="article-title">ماده ۴ — تعهدات کارآموز: </span>
+    <span class="article-body">انجام وظایف طبق برنامه هفتگی؛ ثبت روزانه پیشرفت کار از طریق گیت؛ حضور در جلسات هفتگی بازبینی؛ عدم افشای کدها، داده‌ها و مستندات پروژه به اشخاص ثالث در طول دوره و پس از آن؛ تلاش در جهت تحویل پروژه‌ای که در پایان دوره به عنوان یک نمونه‌کار کامل قابل ارائه باشد.</span>
+  </div>
+
+  <!-- Article 5 -->
+  <div class="article">
+    <span class="article-title">ماده ۵ — تعهدات کارفرما: </span>
+    <span class="article-body">پرداخت دستمزد پایه در موعد مقرر؛ ارائه راهنمایی و مربیگری منظم؛ ارزیابی شفاف و مستند جهت تعیین پاداش؛ فراهم‌کردن منابع آموزشی لازم.</span>
+  </div>
+
+  <!-- Article 6 -->
+  <div class="article">
+    <span class="article-title">ماده ۶ — محرمانگی و مالکیت معنوی: </span>
+    <span class="article-body">کلیه کدها، طراحی‌ها و مستندات تولیدشده در طول این قرارداد، مالکیت معنوی کارفرما محسوب می‌شود. کارآموز حق استفاده از کدهای پروژه در نمونه‌کار شخصی خود را دارد، مشروط بر عدم افشای اطلاعات تجاری و داده‌های کاربران.</span>
+  </div>
+
+  <!-- Article 7 -->
+  <div class="article">
+    <span class="article-title">ماده ۷ — فسخ قرارداد: </span>
+    <span class="article-body">هر یک از طرفین با ارائه ۱۵ روز اخطار کتبی می‌توانند قرارداد را فسخ نمایند. در صورت فسخ، دستمزد تا آخرین روز کاری محاسبه و حداکثر ظرف ۵ روز کاری پرداخت خواهد شد. چنانچه کارفرما بدون ارائه اخطار کتبی اقدام به فسخ قرارداد نماید، موظف به پرداخت معادل ۱۵ روز حقوق پایه به عنوان خسارت به کارآموز خواهد بود. فسخ یک‌طرفه بدون اخطار از سوی کارآموز، تعهدی برای کارفرما ایجاد نمی‌کند.</span>
+  </div>
+
+  <!-- Article 8 -->
+  <div class="article">
+    <span class="article-title">ماده ۸ — انعطاف‌پذیری محدوده پروژه: </span>
+    <span class="article-body">کارآموز می‌پذیرد که ماهیت پروژه‌های نرم‌افزاری ایجاب می‌کند اولویت‌ها، ابزارها یا حوزه کاری در طول دوره تغییر کنند. کارآموز متعهد می‌شود با انعطاف‌پذیری با این تغییرات همراهی کرده و بر اساس نیازهای به‌روز کارفرما فعالیت نماید. در مقابل، کارفرما متعهد می‌شود تغییرات محدوده را به صورت معقول و متناسب با ظرفیت آموزشی دوره اعمال نماید و از تغییرات بنیادی مکرر که به پیشرفت کارآموز آسیب می‌زند خودداری کند.</span>
+  </div>
+
+  <!-- Article 9 -->
+  <div class="article">
+    <span class="article-title">ماده ۹ — تمدید قرارداد: </span>
+    <span class="article-body">تمدید همکاری پس از پایان مدت قرارداد، اعم از ادامه در همان حوزه یا تغییر حوزه فعالیت (از جمله تغییر از توسعه نرم‌افزار به حوزه‌هایی نظیر امنیت شبکه یا سایر موارد)، منوط به توافق کتبی طرفین است. چنانچه این توافق در طول مدت قرارداد جاری حاصل شود، همکاری تا پایان تاریخ قرارداد فعلی تحت همین قرارداد ادامه یافته و نیازی به تنظیم قرارداد جدید نخواهد بود.</span>
+  </div>
+
+  <!-- Article 10 -->
+  <div class="article">
+    <span class="article-title">ماده ۱۰ — حل اختلاف: </span>
+    <span class="article-body">اختلافات ناشی از تفسیر یا اجرای این قرارداد ابتدا از طریق مذاکره مستقیم حل‌وفصل خواهد شد. در صورت عدم توافق، مراجع قانونی ذی‌صلاح صالح به رسیدگی خواهند بود.</span>
+  </div>
+
+  <!-- Signatures -->
+  <div class="signature-section">
+    <div class="sig-title">این قرارداد در یک نسخه تنظیم و به امضای طرفین رسید — هر طرف یک تصویر نگه می‌دارد</div>
+    <div class="sig-row">
+      <div class="sig-block">
+        <div class="sig-label">کارفرما</div>
+        <div class="sig-field"><span>نام: محمد رضائی شریف‌آبادی</span></div>
+        <div class="sig-field"><span>تاریخ:</span><span class="dotline"></span></div>
+        <div class="sig-stamp">امضا</div>
+      </div>
+      <div class="sig-block">
+        <div class="sig-label">کارآموز</div>
+        <div class="sig-field"><span>نام: امیرحسین فیضی</span></div>
+        <div class="sig-field"><span>تاریخ:</span><span class="dotline"></span></div>
+        <div class="sig-stamp">امضا</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">این قرارداد توافق‌نامه‌ای لازم‌الاجرا بین طرفین بوده و در صورت بروز اختلاف، کلیه بندهای آن قابل استناد و پیگرد قانونی می‌باشد.</div>
+
+</div>
+
+</body>
+</html>

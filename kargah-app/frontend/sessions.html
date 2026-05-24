@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sessions — Kargah</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <span class="logo">Kar<span>gah</span></span>
+      <ul>
+        <li><a href="index.html">Browse Masters</a></li>
+        <li><a href="sessions.html" class="active">Sessions</a></li>
+        <li><a href="admin/login.html">Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Browse Sessions</h1>
+      <p>Studio workshops, mobile visits, and custom commissions from Iran's master craftspeople</p>
+    </div>
+  </header>
+
+  <!-- Session Type Tabs -->
+  <div class="search-bar">
+    <div class="container">
+      <button class="btn btn-secondary" id="tab-all"        onclick="filterByType('')">All Sessions</button>
+      <button class="btn btn-secondary" id="tab-studio"     onclick="filterByType('studio')">🏛️ Studio</button>
+      <button class="btn btn-primary"   id="tab-mobile"     onclick="filterByType('mobile')">🚐 Mobile (سیار)</button>
+      <button class="btn btn-secondary" id="tab-commission" onclick="filterByType('commission')">✉️ Commission</button>
+    </div>
+  </div>
+
+  <main class="section">
+    <div class="container">
+      <div id="loading" class="loading">Loading sessions...</div>
+      <div id="empty-state" class="empty-state hidden"><p>No sessions found for this type.</p></div>
+      <div id="session-grid" class="artisan-grid hidden"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Kargah &copy; 2026 — Connecting Iran's Craft Masters with Eager Learners</p>
+  </footer>
+
+  <script src="js/sessions.js"></script>
+</body>
+</html>

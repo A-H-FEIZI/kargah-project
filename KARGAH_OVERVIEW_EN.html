@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kargah — Project Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary:   #7C3A1E;
+      --accent:    #C8663A;
+      --light-bg:  #FDF7F3;
+      --card-bg:   #FFFFFF;
+      --border:    #EAD9CC;
+      --text:      #221008;
+      --muted:     #7A5A4A;
+      --green:     #2D6A4F;
+      --green-bg:  #EAF4EE;
+      --blue:      #1A4D7C;
+      --blue-bg:   #EBF2FA;
+      --purple:    #5C3A7C;
+      --purple-bg: #F2EDFA;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--light-bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 28px;
+      margin-bottom: 36px;
+    }
+    .logo-block .logo {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+    .logo-block .logo span {
+      color: var(--accent);
+    }
+    .logo-block .tagline {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 6px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+    .header-meta {
+      text-align: right;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+    .header-meta strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    p {
+      color: var(--muted);
+      font-size: 13.5px;
+      margin-bottom: 8px;
+    }
+
+    section { margin-bottom: 40px; }
+
+    /* ── IDEA BLOCK ── */
+    .idea-box {
+      background: var(--primary);
+      color: white;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+    .idea-box h2 { color: white; font-size: 20px; margin-bottom: 10px; }
+    .idea-box p { color: rgba(255,255,255,0.82); margin-bottom: 0; font-size: 14px; line-height: 1.75; }
+    .idea-box .idea-highlight {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
+    }
+
+    .role-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .role-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+    .role-card .role-icon { font-size: 22px; margin-bottom: 6px; }
+    .role-card h3 { font-size: 13px; margin-bottom: 4px; }
+    .role-card p { font-size: 12.5px; margin: 0; }
+
+    /* ── SESSION TYPES ── */
+    .session-types {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .session-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      text-align: center;
+    }
+    .session-card .icon { font-size: 24px; margin-bottom: 8px; }
+    .session-card h3 { font-size: 13px; margin-bottom: 4px; }
+    .session-card p { font-size: 12px; margin: 0; }
+
+    /* ── FEATURES ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .feature-item .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+    .feature-item p { margin: 0; font-size: 13px; color: var(--text); }
+    .feature-item span { font-weight: 600; }
+
+    /* ── TECH STACK ── */
+    .stack-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .stack-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+    .stack-tag.backend  { background: var(--blue-bg);   color: var(--blue);   }
+    .stack-tag.frontend { background: var(--green-bg);  color: var(--green);  }
+    .stack-tag.db       { background: var(--purple-bg); color: var(--purple); }
+    .stack-tag.tools    { background: #FFF3EA;           color: var(--accent); }
+
+    /* ── LEARNING PATH ── */
+    .months-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .month-card {
+      border-radius: 10px;
+      padding: 18px 16px;
+      border: 1px solid var(--border);
+    }
+    .month-card.m1 { background: #FFF3EA; border-color: #F0C9A8; }
+    .month-card.m2 { background: #EBF2FA; border-color: #A8C4E0; }
+    .month-card.m3 { background: #EAF4EE; border-color: #A8D4BA; }
+    .month-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .m1 .month-label { color: var(--accent); }
+    .m2 .month-label { color: var(--blue); }
+    .m3 .month-label { color: var(--green); }
+    .month-card h3 { font-size: 14px; margin-bottom: 10px; }
+    .skill-list {
+      list-style: none;
+      padding: 0;
+    }
+    .skill-list li {
+      font-size: 12.5px;
+      color: var(--muted);
+      padding: 3px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .skill-list li:last-child { border-bottom: none; }
+    .skill-list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+
+    /* ── WEEK TABLE ── */
+    .week-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 12.5px;
+    }
+    .week-table th {
+      background: var(--primary);
+      color: white;
+      padding: 8px 12px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+    .week-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .week-table tr:nth-child(even) td { background: #FBF5F0; }
+    .week-table tr:last-child td { border-bottom: none; }
+    .week-table .week-num {
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .week-table .built-tag {
+      display: inline-block;
+      background: var(--green-bg);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* ── HOW TO START ── */
+    .start-box {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 14px;
+    }
+    .steps-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .steps-list li:last-child { border-bottom: none; }
+    .step-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .steps-list li .file {
+      font-family: monospace;
+      background: #F0E8E0;
+      color: var(--primary);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: white; font-size: 12px; }
+      .page { padding: 20px 24px; max-width: 100%; }
+      .idea-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .month-card, .session-card, .role-card, .stack-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .week-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      section { margin-bottom: 28px; page-break-inside: avoid; }
+      .header { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-block">
+      <div class="logo">Kar<span>gah</span></div>
+      <div class="tagline">Traditional Iranian Craft Masters Marketplace &nbsp;·&nbsp; 3-Month Learning Program</div>
+    </div>
+    <div class="header-meta">
+      <strong>Stack</strong> Python · FastAPI · SQLite · JS<br>
+      <strong>Duration</strong> 12 Weeks · Sat – Wed<br>
+      <strong>Level</strong> Zero to Junior Developer
+    </div>
+  </header>
+
+  <!-- THE IDEA -->
+  <section>
+    <div class="section-title">The Project</div>
+    <div class="idea-box">
+      <div class="idea-highlight">What is Kargah?</div>
+      <h2>A marketplace connecting Iranian craft masters with people who want to learn from them.</h2>
+      <p>Iran has thousands of traditional craftspeople — carpet weavers, miniature painters, potters, calligraphers, woodcarvers — who carry skills passed down through generations. Most have no digital presence. On the other side, there are people who genuinely want to learn these crafts, but have no way to find a master near them.</p>
+      <p style="margin-top:10px">Kargah bridges this gap. Masters list their sessions. Seekers browse, filter by city and craft, and request bookings — all through a web platform you will build yourself, from the database to the interface.</p>
+    </div>
+
+    <div class="role-row">
+      <div class="role-card">
+        <div class="role-icon">🎨</div>
+        <h3>The Master (Ustad)</h3>
+        <p>A craftsperson who lists their sessions — type, price, location — and receives booking requests from learners.</p>
+      </div>
+      <div class="role-card">
+        <div class="role-icon">🔍</div>
+        <h3>The Seeker</h3>
+        <p>Someone who browses masters by city and craft, views profiles, and submits a booking request for a session.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESSION TYPES -->
+  <section>
+    <div class="section-title">The Kargah Model — Three Session Types</div>
+    <p>What makes Kargah distinct is that masters can offer three different ways to connect with learners:</p>
+    <div class="session-types">
+      <div class="session-card">
+        <div class="icon">🏛️</div>
+        <h3>Studio</h3>
+        <p>The seeker visits the master's workshop or studio for in-person instruction.</p>
+      </div>
+      <div class="session-card">
+        <div class="icon">🚗</div>
+        <h3>Mobile (سیار)</h3>
+        <p>The master travels to the seeker's location — ideal for learners who cannot travel.</p>
+      </div>
+      <div class="session-card">
+        <div class="icon">📦</div>
+        <h3>Commission</h3>
+        <p>The seeker orders a custom handmade piece directly from the master.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL BUILD -->
+  <section>
+    <div class="section-title">What You Will Build</div>
+    <h2>A complete, working web product — not a tutorial exercise.</h2>
+    <div class="features-grid">
+      <div class="feature-item"><div class="dot"></div><p><span>Master listing page</span> — browse all masters with filters by city, craft, and session type</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>Session browser</span> — explore available sessions with type-based tabs</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>Master profile page</span> — bio, sessions offered, and a booking request form</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>Booking requests</span> — seekers submit requests; data is saved to a real database</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>Admin dashboard</span> — add and manage masters, sessions, and booking requests</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>JWT authentication</span> — admin login protected by industry-standard tokens</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>Automated tests</span> — 5 API endpoint tests written with pytest</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>Live deployment</span> — a real public URL you can share with employers</p></div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section>
+    <div class="section-title">The Technology Stack</div>
+    <p>Every technology below is free, open source, and used in production at real companies — including Iranian tech companies you may interview at.</p>
+    <div class="stack-row">
+      <span class="stack-tag backend">🐍 Python</span>
+      <span class="stack-tag backend">⚡ FastAPI</span>
+      <span class="stack-tag db">🗄️ SQLite</span>
+      <span class="stack-tag db">📋 SQL</span>
+      <span class="stack-tag frontend">🌐 HTML + CSS</span>
+      <span class="stack-tag frontend">✨ JavaScript</span>
+      <span class="stack-tag tools">🔀 Git + GitHub</span>
+      <span class="stack-tag tools">🤖 Claude AI</span>
+      <span class="stack-tag tools">🐋 Docker (concepts)</span>
+      <span class="stack-tag tools">🚀 Render (deploy)</span>
+    </div>
+  </section>
+
+  <!-- LEARNING PATH -->
+  <section>
+    <div class="section-title">What You Will Learn — 3-Month Path</div>
+    <div class="months-row">
+      <div class="month-card m1">
+        <div class="month-label">Month 1 — Weeks 1–4</div>
+        <h3>Foundation</h3>
+        <ul class="skill-list">
+          <li>How computers work (CPU, RAM, processes)</li>
+          <li>How the internet works (DNS, HTTP, TCP/UDP)</li>
+          <li>Networking concepts (proxies, VPN, CDN)</li>
+          <li>Git — daily commits, branches, merges</li>
+          <li>Python — variables, functions, classes</li>
+          <li>Big O notation + data structures</li>
+          <li>HTML structure + CSS flexbox</li>
+          <li>Responsive design + media queries</li>
+        </ul>
+      </div>
+      <div class="month-card m2">
+        <div class="month-label">Month 2 — Weeks 5–8</div>
+        <h3>Building</h3>
+        <ul class="skill-list">
+          <li>JavaScript — DOM, events, async/await</li>
+          <li>fetch() — calling APIs from the browser</li>
+          <li>FastAPI — building REST endpoints</li>
+          <li>SQL — SELECT, JOIN, INSERT, UPDATE</li>
+          <li>Database design + normalization</li>
+          <li>Transactions + ACID properties</li>
+          <li>Full-stack integration end-to-end</li>
+          <li>SQL injection + XSS security basics</li>
+        </ul>
+      </div>
+      <div class="month-card m3">
+        <div class="month-label">Month 3 — Weeks 9–12</div>
+        <h3>Professional</h3>
+        <ul class="skill-list">
+          <li>pytest — automated API testing</li>
+          <li>Product thinking + user stories</li>
+          <li>Sprint planning + PRD writing</li>
+          <li>bcrypt password hashing</li>
+          <li>JWT authentication tokens</li>
+          <li>Docker concepts + containers</li>
+          <li>Live deployment (Render)</li>
+          <li>Interview preparation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12-WEEK MAP -->
+  <section>
+    <div class="section-title">12-Week Map at a Glance</div>
+    <table class="week-table">
+      <thead>
+        <tr>
+          <th>Week</th>
+          <th>What You Learn</th>
+          <th>What Gets Built</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="week-num">1</td><td>How computers + the internet work</td><td>Notes, thread demo, dev environment</td></tr>
+        <tr><td class="week-num">2</td><td>Git professionally + Python basics</td><td>Python scripts, branches on GitHub</td></tr>
+        <tr><td class="week-num">3</td><td>Python intermediate + Big O + data structures</td><td>API client prototype</td></tr>
+        <tr><td class="week-num">4</td><td>HTML + CSS + flexbox + responsive design</td><td>Kargah master listing page styled</td></tr>
+        <tr><td class="week-num">5</td><td>JavaScript + DOM + fetch + async/await</td><td>Dynamic page rendering from mock data</td></tr>
+        <tr><td class="week-num">6</td><td>FastAPI — endpoints, Pydantic, CORS</td><td><span class="built-tag">Backend running</span> — real API serving data</td></tr>
+        <tr><td class="week-num">7</td><td>SQL — queries, joins, normalization, indexes</td><td>Kargah database fully understood + queried</td></tr>
+        <tr><td class="week-num">8</td><td>Full-stack integration + security basics</td><td><span class="built-tag">Booking flow works</span> end-to-end</td></tr>
+        <tr><td class="week-num">9</td><td>Product thinking + sprint planning + testing</td><td>User stories, admin panel backend, first tests</td></tr>
+        <tr><td class="week-num">10</td><td>Docker concepts + MVC + product completion</td><td><span class="built-tag">All pages complete</span> + demo rehearsal</td></tr>
+        <tr><td class="week-num">11</td><td>bcrypt + JWT + PRD + security audit</td><td>Admin login secured with real authentication</td></tr>
+        <tr><td class="week-num">12</td><td>Deploy + polish + interview prep</td><td><span class="built-tag">Live URL</span> + README + demo script</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- HOW TO START -->
+  <section>
+    <div class="section-title">How to Begin</div>
+    <div class="start-box">
+      <h3 style="margin-bottom: 4px;">Follow these files in this exact order.</h3>
+      <p style="margin: 0 0 4px; font-size: 12.5px;">Each file has a single purpose. Use the right file at the right time.</p>
+      <ol class="steps-list">
+        <li>
+          <div class="step-num">1</div>
+          <div>Read <span class="file">START_HERE.md</span> — one time only. Complete the Day 1 setup: install VS Code, install Git, create GitHub, make your first commit.</div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div>Open <span class="file">WEEKLY_PLAN_EN.md</span> every single day. Find your current week. Do that day's tasks in order. This is your primary guide for all 12 weeks.</div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div>Keep <span class="file">PROMPT_CHEATSHEET.md</span> open in a second tab at all times. When you are stuck, copy a prompt from it and paste it into Claude.</div>
+        </li>
+        <li>
+          <div class="step-num">4</div>
+          <div>Every Wednesday, fill in <span class="file">STUDENT_WEEKLY_LOG.md</span> and commit it. 10 minutes. Honest answers only.</div>
+        </li>
+        <li>
+          <div class="step-num">5</div>
+          <div>In Weeks 11–12, open <span class="file">INTERVIEW_PREP.md</span>. Practice the answers out loud, not just in your head.</div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>Kargah Learning Program &nbsp;·&nbsp; 3 Months &nbsp;·&nbsp; Zero to Junior Developer</div>
+    <div>Work week: Saturday – Wednesday &nbsp;·&nbsp; Daily Git commits required</div>
+  </footer>
+
+</div>
+</body>
+</html>

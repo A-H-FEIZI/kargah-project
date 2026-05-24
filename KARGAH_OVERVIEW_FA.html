@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کارگاه — معرفی پروژه</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary:   #7C3A1E;
+      --accent:    #C8663A;
+      --light-bg:  #FDF7F3;
+      --card-bg:   #FFFFFF;
+      --border:    #EAD9CC;
+      --text:      #221008;
+      --muted:     #7A5A4A;
+      --green:     #2D6A4F;
+      --green-bg:  #EAF4EE;
+      --blue:      #1A4D7C;
+      --blue-bg:   #EBF2FA;
+      --purple:    #5C3A7C;
+      --purple-bg: #F2EDFA;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: var(--light-bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 2;
+      direction: rtl;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 40px;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 28px;
+      margin-bottom: 36px;
+    }
+    .logo-block .logo {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .logo-block .logo span { color: var(--accent); }
+    .logo-block .tagline {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 8px;
+      font-weight: 500;
+    }
+    .header-meta {
+      text-align: left;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 2.2;
+    }
+    .header-meta strong { color: var(--primary); font-weight: 600; }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    p {
+      color: var(--muted);
+      font-size: 13.5px;
+      margin-bottom: 8px;
+    }
+
+    section { margin-bottom: 40px; }
+
+    /* ── IDEA BLOCK ── */
+    .idea-box {
+      background: var(--primary);
+      color: white;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+    }
+    .idea-box h2 { color: white; font-size: 18px; margin-bottom: 10px; line-height: 1.7; }
+    .idea-box p { color: rgba(255,255,255,0.82); margin-bottom: 0; font-size: 13.5px; }
+    .idea-highlight {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 12px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+    }
+
+    .role-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .role-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+    .role-card .role-icon { font-size: 22px; margin-bottom: 6px; }
+    .role-card h3 { font-size: 13px; margin-bottom: 4px; }
+    .role-card p { font-size: 12.5px; margin: 0; }
+
+    /* ── SESSION TYPES ── */
+    .session-types {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .session-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      text-align: center;
+    }
+    .session-card .icon { font-size: 24px; margin-bottom: 8px; }
+    .session-card h3 { font-size: 13px; margin-bottom: 4px; }
+    .session-card p { font-size: 12px; margin: 0; }
+
+    /* ── FEATURES ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .feature-item .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+    .feature-item p { margin: 0; font-size: 13px; color: var(--text); }
+    .feature-item span { font-weight: 700; }
+
+    /* ── TECH STACK ── */
+    .stack-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .stack-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+    .stack-tag.backend  { background: var(--blue-bg);   color: var(--blue);   }
+    .stack-tag.frontend { background: var(--green-bg);  color: var(--green);  }
+    .stack-tag.db       { background: var(--purple-bg); color: var(--purple); }
+    .stack-tag.tools    { background: #FFF3EA;           color: var(--accent); }
+
+    /* ── LEARNING PATH ── */
+    .months-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .month-card {
+      border-radius: 10px;
+      padding: 18px 16px;
+      border: 1px solid var(--border);
+    }
+    .month-card.m1 { background: #FFF3EA; border-color: #F0C9A8; }
+    .month-card.m2 { background: #EBF2FA; border-color: #A8C4E0; }
+    .month-card.m3 { background: #EAF4EE; border-color: #A8D4BA; }
+    .month-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .m1 .month-label { color: var(--accent); }
+    .m2 .month-label { color: var(--blue); }
+    .m3 .month-label { color: var(--green); }
+    .month-card h3 { font-size: 14px; margin-bottom: 10px; }
+    .skill-list {
+      list-style: none;
+      padding: 0;
+    }
+    .skill-list li {
+      font-size: 12.5px;
+      color: var(--muted);
+      padding: 3px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .skill-list li:last-child { border-bottom: none; }
+    .skill-list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+
+    /* ── WEEK TABLE ── */
+    .week-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 12.5px;
+    }
+    .week-table th {
+      background: var(--primary);
+      color: white;
+      padding: 8px 12px;
+      text-align: right;
+      font-weight: 600;
+      font-size: 11.5px;
+    }
+    .week-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      text-align: right;
+    }
+    .week-table tr:nth-child(even) td { background: #FBF5F0; }
+    .week-table tr:last-child td { border-bottom: none; }
+    .week-table .week-num {
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+      text-align: center;
+    }
+    .week-table .built-tag {
+      display: inline-block;
+      background: var(--green-bg);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* ── HOW TO START ── */
+    .start-box {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 14px;
+    }
+    .steps-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .steps-list li:last-child { border-bottom: none; }
+    .step-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .steps-list li .file {
+      font-family: monospace;
+      background: #F0E8E0;
+      color: var(--primary);
+      padding: 1px 7px;
+      border-radius: 4px;
+      font-size: 12px;
+      direction: ltr;
+      display: inline-block;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: white; font-size: 12px; }
+      .page { padding: 20px 24px; max-width: 100%; }
+      .idea-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .month-card, .session-card, .role-card, .stack-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .week-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      section { margin-bottom: 28px; page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-block">
+      <div class="logo">کار<span>گاه</span></div>
+      <div class="tagline">بازار استادان هنرهای سنتی ایران &nbsp;·&nbsp; برنامه یادگیری ۳ ماهه</div>
+    </div>
+    <div class="header-meta">
+      <strong>تکنولوژی</strong> Python · FastAPI · SQLite · JS<br>
+      <strong>مدت</strong> ۱۲ هفته · شنبه تا چهارشنبه<br>
+      <strong>سطح</strong> از صفر تا جونیور دولوپر
+    </div>
+  </header>
+
+  <!-- THE IDEA -->
+  <section>
+    <div class="section-title">پروژه</div>
+    <div class="idea-box">
+      <div class="idea-highlight">کارگاه چیست؟</div>
+      <h2>یک بازار دیجیتال که استادان هنرهای سنتی ایران را به کسانی که می‌خواهند از آن‌ها یاد بگیرند وصل می‌کند.</h2>
+      <p>ایران هزاران هنرمند سنتی دارد — قالی‌باف، نگارگر، سفالگر، خوشنویس، منبت‌کار — که مهارت‌هایشان نسل به نسل منتقل شده. اکثر آن‌ها هیچ حضور دیجیتالی ندارند. در طرف دیگر، افرادی هستند که واقعاً می‌خواهند این هنرها را یاد بگیرند، اما راهی برای پیدا کردن استاد ندارند.</p>
+      <p style="margin-top:10px">کارگاه این شکاف را پر می‌کند. استادان جلسات خود را ثبت می‌کنند. جوینده‌ها مرور می‌کنند، بر اساس شهر و رشته فیلتر می‌زنند، و درخواست رزرو ارسال می‌کنند — همه از طریق یک پلتفرم وب که تو خودت می‌سازی، از دیتابیس تا رابط کاربری.</p>
+    </div>
+
+    <div class="role-row">
+      <div class="role-card">
+        <div class="role-icon">🎨</div>
+        <h3>استاد (اوستا)</h3>
+        <p>هنرمندی که جلسات خود را ثبت می‌کند — نوع، قیمت، مکان — و درخواست رزرو از یادگیرندگان دریافت می‌کند.</p>
+      </div>
+      <div class="role-card">
+        <div class="role-icon">🔍</div>
+        <h3>جوینده</h3>
+        <p>کسی که استادان را بر اساس شهر و رشته مرور می‌کند، پروفایل‌ها را می‌بیند، و درخواست رزرو جلسه ارسال می‌کند.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESSION TYPES -->
+  <section>
+    <div class="section-title">مدل کارگاه — سه نوع جلسه</div>
+    <p>آنچه کارگاه را متمایز می‌کند این است که استادان می‌توانند به سه روش مختلف با یادگیرندگان ارتباط برقرار کنند:</p>
+    <div class="session-types">
+      <div class="session-card">
+        <div class="icon">🏛️</div>
+        <h3>استودیو</h3>
+        <p>جوینده به کارگاه یا آتلیه استاد می‌رود برای آموزش حضوری.</p>
+      </div>
+      <div class="session-card">
+        <div class="icon">🚗</div>
+        <h3>سیار</h3>
+        <p>استاد به محل جوینده می‌رود — مناسب برای کسانی که نمی‌توانند سفر کنند.</p>
+      </div>
+      <div class="session-card">
+        <div class="icon">📦</div>
+        <h3>سفارش</h3>
+        <p>جوینده مستقیماً یک اثر دستساز سفارشی از استاد درخواست می‌کند.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL BUILD -->
+  <section>
+    <div class="section-title">چه چیزی می‌سازی</div>
+    <h2>یک محصول وب کامل و کارکردی — نه یک تمرین آموزشی.</h2>
+    <div class="features-grid">
+      <div class="feature-item"><div class="dot"></div><p><span>صفحه لیست استادان</span> — مرور همه استادان با فیلتر شهر، رشته، و نوع جلسه</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>مرورگر جلسات</span> — نمایش جلسات موجود با تب‌های بر اساس نوع</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>صفحه پروفایل استاد</span> — بیوگرافی، جلسات ارائه‌شده، و فرم درخواست رزرو</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>درخواست رزرو</span> — جوینده‌ها درخواست ارسال می‌کنند؛ داده در دیتابیس واقعی ذخیره می‌شود</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>پنل ادمین</span> — اضافه و مدیریت استادان، جلسات، و درخواست‌های رزرو</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>احراز هویت JWT</span> — لاگین ادمین محافظت‌شده با توکن‌های استاندارد صنعتی</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>تست خودکار</span> — ۵ تست endpoint با pytest نوشته می‌شود</p></div>
+      <div class="feature-item"><div class="dot"></div><p><span>استقرار زنده</span> — یک URL عمومی واقعی که می‌توانی با کارفرما به اشتراک بگذاری</p></div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section>
+    <div class="section-title">تکنولوژی‌های مورد استفاده</div>
+    <p>هر تکنولوژی زیر رایگان، متن‌باز، و در شرکت‌های واقعی — از جمله شرکت‌های ایرانی که ممکن است مصاحبه دهی — استفاده می‌شود.</p>
+    <div class="stack-row">
+      <span class="stack-tag backend">🐍 Python</span>
+      <span class="stack-tag backend">⚡ FastAPI</span>
+      <span class="stack-tag db">🗄️ SQLite</span>
+      <span class="stack-tag db">📋 SQL</span>
+      <span class="stack-tag frontend">🌐 HTML + CSS</span>
+      <span class="stack-tag frontend">✨ JavaScript</span>
+      <span class="stack-tag tools">🔀 Git + GitHub</span>
+      <span class="stack-tag tools">🤖 Claude AI</span>
+      <span class="stack-tag tools">🐋 Docker (مفاهیم)</span>
+      <span class="stack-tag tools">🚀 Render (استقرار)</span>
+    </div>
+  </section>
+
+  <!-- LEARNING PATH -->
+  <section>
+    <div class="section-title">چه یاد می‌گیری — مسیر ۳ ماهه</div>
+    <div class="months-row">
+      <div class="month-card m1">
+        <div class="month-label">ماه اول — هفته‌های ۱ تا ۴</div>
+        <h3>پایه‌گذاری</h3>
+        <ul class="skill-list">
+          <li>کامپیوتر چطور کار می‌کند (CPU، RAM، پروسس)</li>
+          <li>اینترنت چطور کار می‌کند (DNS، HTTP، TCP/UDP)</li>
+          <li>مفاهیم شبکه (پروکسی، VPN، CDN)</li>
+          <li>Git — کامیت روزانه، برنچ، مرج</li>
+          <li>Python — متغیر، تابع، کلاس</li>
+          <li>Big O + ساختار داده‌ها</li>
+          <li>HTML + CSS + Flexbox</li>
+          <li>طراحی واکنش‌گرا</li>
+        </ul>
+      </div>
+      <div class="month-card m2">
+        <div class="month-label">ماه دوم — هفته‌های ۵ تا ۸</div>
+        <h3>ساخت</h3>
+        <ul class="skill-list">
+          <li>JavaScript — DOM، رویدادها، async/await</li>
+          <li>fetch() — فراخوانی API از مرورگر</li>
+          <li>FastAPI — ساختن endpoint های REST</li>
+          <li>SQL — SELECT، JOIN، INSERT، UPDATE</li>
+          <li>طراحی دیتابیس + نرمال‌سازی</li>
+          <li>تراکنش + خواص ACID</li>
+          <li>یکپارچه‌سازی فول‌استک</li>
+          <li>SQL injection + XSS</li>
+        </ul>
+      </div>
+      <div class="month-card m3">
+        <div class="month-label">ماه سوم — هفته‌های ۹ تا ۱۲</div>
+        <h3>حرفه‌ای</h3>
+        <ul class="skill-list">
+          <li>pytest — تست خودکار API</li>
+          <li>تفکر محصول + user story</li>
+          <li>Sprint planning + نوشتن PRD</li>
+          <li>هش رمز عبور با bcrypt</li>
+          <li>توکن احراز هویت JWT</li>
+          <li>مفاهیم Docker + کانتینر</li>
+          <li>استقرار زنده (Render)</li>
+          <li>آماده‌سازی مصاحبه</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12-WEEK MAP -->
+  <section>
+    <div class="section-title">نقشه ۱۲ هفته‌ای — یک نگاه</div>
+    <table class="week-table">
+      <thead>
+        <tr>
+          <th style="width:60px">هفته</th>
+          <th>چه یاد می‌گیری</th>
+          <th>چه چیزی ساخته می‌شود</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="week-num">۱</td><td>کامپیوتر + اینترنت چطور کار می‌کنند</td><td>یادداشت‌ها، دمو ترد، محیط توسعه</td></tr>
+        <tr><td class="week-num">۲</td><td>Git حرفه‌ای + پایه‌های Python</td><td>اسکریپت‌های Python، برنچ روی GitHub</td></tr>
+        <tr><td class="week-num">۳</td><td>Python میانه + Big O + ساختار داده</td><td>نمونه اولیه کلاینت API</td></tr>
+        <tr><td class="week-num">۴</td><td>HTML + CSS + Flexbox + طراحی واکنش‌گرا</td><td>صفحه لیست استادان کارگاه استایل‌دهی می‌شود</td></tr>
+        <tr><td class="week-num">۵</td><td>JavaScript + DOM + fetch + async/await</td><td>رندر داینامیک صفحه از داده mock</td></tr>
+        <tr><td class="week-num">۶</td><td>FastAPI — endpoint، Pydantic، CORS</td><td><span class="built-tag">بک‌اند اجرا می‌شود</span> — API واقعی</td></tr>
+        <tr><td class="week-num">۷</td><td>SQL — کوئری، join، نرمال‌سازی، ایندکس</td><td>دیتابیس کارگاه کاملاً درک و کوئری می‌شود</td></tr>
+        <tr><td class="week-num">۸</td><td>یکپارچه‌سازی فول‌استک + امنیت پایه</td><td><span class="built-tag">فلوی رزرو کار می‌کند</span> — از ابتدا تا انتها</td></tr>
+        <tr><td class="week-num">۹</td><td>تفکر محصول + برنامه Sprint + تست</td><td>user story، بک‌اند ادمین، اولین تست‌ها</td></tr>
+        <tr><td class="week-num">۱۰</td><td>مفاهیم Docker + MVC + تکمیل محصول</td><td><span class="built-tag">همه صفحات کامل</span> + تمرین دمو</td></tr>
+        <tr><td class="week-num">۱۱</td><td>bcrypt + JWT + PRD + بررسی امنیت</td><td>لاگین ادمین با احراز هویت واقعی</td></tr>
+        <tr><td class="week-num">۱۲</td><td>استقرار + پالایش + آماده‌سازی مصاحبه</td><td><span class="built-tag">URL زنده</span> + README + اسکریپت دمو</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- HOW TO START -->
+  <section>
+    <div class="section-title">چطور شروع کنی</div>
+    <div class="start-box">
+      <h3 style="margin-bottom: 4px;">این فایل‌ها را دقیقاً به همین ترتیب دنبال کن.</h3>
+      <p style="margin: 0 0 4px; font-size: 12.5px;">هر فایل یک هدف مشخص دارد. فایل درست را در زمان درست استفاده کن.</p>
+      <ol class="steps-list">
+        <li>
+          <div class="step-num">۱</div>
+          <div>فایل <span class="file">START_HERE.md</span> را بخوان — فقط یک بار. ستاپ روز اول را کامل کن: VS Code، Git، GitHub، اولین کامیت.</div>
+        </li>
+        <li>
+          <div class="step-num">۲</div>
+          <div>فایل <span class="file">WEEKLY_PLAN_FA.md</span> را هر روز باز کن. هفته جاری را پیدا کن. کارهای امروز را به ترتیب انجام بده. این راهنمای اصلی تو برای ۱۲ هفته است.</div>
+        </li>
+        <li>
+          <div class="step-num">۳</div>
+          <div>فایل <span class="file">PROMPT_CHEATSHEET_FA.md</span> را همیشه در یک تب دیگر باز نگه‌دار. وقتی گیر کردی، یک پرامپت از آن کپی کن و در Claude paste کن.</div>
+        </li>
+        <li>
+          <div class="step-num">۴</div>
+          <div>هر چهارشنبه، فایل <span class="file">STUDENT_WEEKLY_LOG.md</span> را پر کن و کامیت بزن. ۱۰ دقیقه. پاسخ‌های صادقانه.</div>
+        </li>
+        <li>
+          <div class="step-num">۵</div>
+          <div>در هفته‌های ۱۱ و ۱۲، فایل <span class="file">INTERVIEW_PREP.md</span> را باز کن. پاسخ‌ها را با صدای بلند تمرین کن، نه فقط در ذهن.</div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>برنامه یادگیری کارگاه &nbsp;·&nbsp; ۳ ماه &nbsp;·&nbsp; از صفر تا جونیور دولوپر</div>
+    <div>هفته کاری: شنبه تا چهارشنبه &nbsp;·&nbsp; کامیت Git روزانه الزامی است</div>
+  </footer>
+
+</div>
+</body>
+</html>

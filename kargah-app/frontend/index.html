@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kargah — Book a Master. Learn a Craft.</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <span class="logo">Kar<span>gah</span></span>
+      <ul>
+        <li><a href="index.html" class="active">Browse Masters</a></li>
+        <li><a href="sessions.html">Sessions</a></li>
+        <li><a href="admin/login.html">Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Book a Master. Learn a Craft.</h1>
+      <p>Connect with Iran's traditional artisans — at their studio, at your home, or by commission</p>
+
+      <!-- Session type quick-filter -->
+      <div class="session-type-pills" style="margin-top: 20px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="sessions.html?type=studio" class="pill">🏛️ Studio Sessions</a>
+        <a href="sessions.html?type=mobile" class="pill pill-mobile">🚐 Mobile (سیار)</a>
+        <a href="sessions.html?type=commission" class="pill pill-commission">✉️ Custom Commission</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search & Filter Bar -->
+  <div class="search-bar">
+    <div class="container">
+      <input type="text" id="search-input" placeholder="Search masters by name or skill..." />
+      <select id="category-filter">
+        <option value="">All Crafts</option>
+      </select>
+      <button class="btn btn-primary" onclick="applyFilters()">Search</button>
+      <button class="btn btn-secondary" onclick="clearFilters()">Clear</button>
+    </div>
+  </div>
+
+  <!-- Master Grid -->
+  <main class="section">
+    <div class="container">
+      <h2 class="section-title">Our Masters</h2>
+      <div id="loading" class="loading">Loading masters...</div>
+      <div id="empty-state" class="empty-state hidden">
+        <p>No masters found.</p>
+        <p>Try a different search or craft category.</p>
+      </div>
+      <div id="master-grid" class="artisan-grid hidden"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Kargah &copy; 2026 — Connecting Iran's Craft Masters with Eager Learners</p>
+  </footer>
+
+  <style>
+    .pill {
+      padding: 8px 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .pill:hover { background: rgba(255,255,255,0.3); text-decoration: none; color: white; }
+    .pill-mobile { background: rgba(205,133,63,0.3); border-color: #cd853f; }
+    .pill-commission { background: rgba(61,43,31,0.4); }
+  </style>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
