@@ -1,8 +1,8 @@
 numbers = [8, 6, 12, 16, 18, 15]
-largest = numbers[0]
 
-for number in numbers:
-    if number > largest:
-        largest = number
+for j in range(len(numbers)):
+    for i in range(len(numbers) - 1):
+        if numbers[i] > numbers[i + 1]:
+            numbers[i], numbers[i + 1] = numbers[i + 1], numbers[i]
 
-print(largest)
+print(numbers)
