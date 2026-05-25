@@ -1,8 +1,9 @@
-numbers = [8, 6, 12, 16, 18, 15]
-
-for j in range(len(numbers)):
-    for i in range(len(numbers) - 1):
-        if numbers[i] > numbers[i + 1]:
-            numbers[i], numbers[i + 1] = numbers[i + 1], numbers[i]
-
-print(numbers)
+numbers = [6, 8, 12, 15, 16, 18]
+target = 85
+found = false
+for i in range(len(numbers)):
+    if numbers[i] == target:
+        print(f"پیدا شد! خونه شماره {i}")
+        found = true
+        if not found:
+    print("پیدا نشد!")
