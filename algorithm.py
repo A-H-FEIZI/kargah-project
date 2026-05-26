@@ -1,5 +1,5 @@
-numbers = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-
-for number in numbers:
-    if number % 2 == 0:
-        print(number)
+numbers = [1, 2, 3, 4, 5]
+result = []
+for number in reversed(numbers):
+    result.append(number)
+print(result)
