@@ -1,5 +1,8 @@
-numbers = [1, 2, 3, 4, 5]
-result = []
-for number in reversed(numbers):
-    result.append(number)
-print(result)
+numbers = [1, 2, 3, 2, 4, 3, 5]
+seen = []
+
+for number in numbers:
+    if number in seen:
+        print(number)
+    else:
+        seen.append(number)
