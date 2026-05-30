@@ -1,8 +1,15 @@
-numbers = [1, 2, 3, 2, 4, 3, 5]
-seen = []
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+target = 7
 
-for number in numbers:
-    if number in seen:
-        print(number)
+left = 0
+right = len(numbers) - 1
+
+while left <= right:
+    mid = (left + right) // 2
+    if numbers[mid] == target:
+        print(f"پیدا شد! خونه شماره {mid}")
+        break
+    elif numbers[mid] < target:
+        left = mid + 1
     else:
-        seen.append(number)
+        right = mid - 1
