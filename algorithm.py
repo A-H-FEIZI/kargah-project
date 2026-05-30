@@ -1,15 +1,9 @@
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-target = 7
+stack = []
 
-left = 0
-right = len(numbers) - 1
+stack.append("google.com")
+stack.append("github.com")
+stack.append("claude.ai")
 
-while left <= right:
-    mid = (left + right) // 2
-    if numbers[mid] == target:
-        print(f"پیدا شد! خونه شماره {mid}")
-        break
-    elif numbers[mid] < target:
-        left = mid + 1
-    else:
-        right = mid - 1
+print(stack.pop())
+print(stack.pop())
+print(stack)
