@@ -1,9 +1,9 @@
-stack = []
+queue = []
 
-stack.append("google.com")
-stack.append("github.com")
-stack.append("claude.ai")
+queue.append("علی")
+queue.append("رضا")
+queue.append("سارا")
 
-print(stack.pop())
-print(stack.pop())
-print(stack)
+print(queue.pop(0))
+print(queue.pop(0))
+print(queue)
