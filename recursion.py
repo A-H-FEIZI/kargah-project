@@ -1,8 +1,6 @@
-def countdown(n):
-    if n == 0:
-        print("تموم شد!")
-        return
-    print(n)
-    countdown(n - 1)
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
 
-countdown(5)
+print(factorial(5))
