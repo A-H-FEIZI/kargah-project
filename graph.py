@@ -18,3 +18,16 @@ def bfs(graph, start):
     return visited
 
 print(bfs(graph, "تهران"))
+def dfs(graph, start, visited=None):
+    if visited is None:
+        visited = []
+    
+    visited.append(start)
+    
+    for city in graph[start]:
+        if city not in visited:
+            dfs(graph, city, visited)
+    
+    return visited
+
+print(dfs(graph, "تهران"))
