@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login — Kargah</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="login-page">
+
+  <div class="login-card">
+    <h2>Kargah Admin</h2>
+
+    <div id="error-msg" class="alert alert-error hidden"></div>
+
+    <form id="login-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="admin" required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="••••••••" required />
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">
+        Sign In
+      </button>
+    </form>
+
+    <p class="text-center mt-16" style="font-size:0.85rem; color:#888;">
+      <a href="../index.html">← Back to Kargah</a>
+    </p>
+  </div>
+
+  <script>
+    // -------------------------------------------------------
+    // Week 10 task: replace this with a real API call to
+    // POST /auth/login and receive a session token.
+    // For now this is a simple demo check.
+    // -------------------------------------------------------
+    const DEMO_USERNAME = "admin";
+    const DEMO_PASSWORD = "kargah2026";
+
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+      const errorEl  = document.getElementById("error-msg");
+
+      if (username === DEMO_USERNAME && password === DEMO_PASSWORD) {
+        // Store a simple flag in sessionStorage
+        sessionStorage.setItem("kargah_admin", "true");
+        window.location.href = "dashboard.html";
+      } else {
+        errorEl.textContent = "Invalid username or password.";
+        errorEl.classList.remove("hidden");
+      }
+    });
+  </script>
+
+</body>
+</html>

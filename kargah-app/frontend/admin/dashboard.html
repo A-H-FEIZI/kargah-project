@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Kargah</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <div class="admin-layout">
+
+    <aside class="admin-sidebar">
+      <span class="logo">Kargah Admin</span>
+      <ul>
+        <li><a href="#masters-section"  class="active">Masters</a></li>
+        <li><a href="#sessions-section">Sessions</a></li>
+        <li><a href="../index.html">View Site</a></li>
+        <li><a href="#" onclick="logout()">Sign Out</a></li>
+      </ul>
+    </aside>
+
+    <div class="admin-main">
+
+      <!-- ===================== MASTERS ===================== -->
+      <div id="masters-section">
+        <h2>Manage Masters</h2>
+        <div id="master-alert" class="alert hidden"></div>
+
+        <div class="form-card" style="margin-bottom: 32px;">
+          <h3 style="margin-bottom: 20px; color: #3d2b1f;">Add New Master</h3>
+          <form id="add-master-form">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="m-name" required placeholder="e.g. Ali Rezaei" />
+            </div>
+            <div class="form-group">
+              <label>Craft Category</label>
+              <select id="m-category">
+                <option value="">Select category...</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" id="m-city" placeholder="e.g. Isfahan" />
+            </div>
+            <div class="form-group">
+              <label>Years of Experience</label>
+              <input type="number" id="m-exp" placeholder="e.g. 15" min="0" />
+            </div>
+            <div class="form-group">
+              <label>Biography</label>
+              <textarea id="m-bio" placeholder="Describe the master's background and craft..."></textarea>
+            </div>
+            <div class="form-group">
+              <label>Contact Email</label>
+              <input type="email" id="m-email" placeholder="master@example.com" />
+            </div>
+            <button type="submit" class="btn btn-primary">Add Master</button>
+          </form>
+        </div>
+
+        <h3 style="margin-bottom: 16px; color: #3d2b1f;">All Masters</h3>
+        <div id="masters-loading" class="loading">Loading...</div>
+        <table class="data-table hidden" id="masters-table">
+          <thead>
+            <tr>
+              <th>ID</th><th>Name</th><th>Craft</th><th>City</th><th>Exp</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="masters-tbody"></tbody>
+        </table>
+      </div>
+
+      <!-- ===================== SESSIONS ===================== -->
+      <div id="sessions-section" style="margin-top: 48px;">
+        <h2>Manage Sessions</h2>
+        <div id="session-alert" class="alert hidden"></div>
+
+        <div class="form-card" style="margin-bottom: 32px;">
+          <h3 style="margin-bottom: 20px; color: #3d2b1f;">Add New Session</h3>
+          <form id="add-session-form">
+            <div class="form-group">
+              <label>Master *</label>
+              <select id="s-master" required>
+                <option value="">Select master...</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Session Title *</label>
+              <input type="text" id="s-title" required placeholder="e.g. Beginner Pottery Workshop" />
+            </div>
+            <div class="form-group">
+              <label>Session Type *</label>
+              <select id="s-type" required>
+                <option value="">Select type...</option>
+                <option value="studio">🏛️ Studio — seeker comes to master</option>
+                <option value="mobile">🚐 Mobile (سیار) — master travels to seeker</option>
+                <option value="commission">✉️ Commission — custom order</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Duration (hours)</label>
+              <input type="number" id="s-duration" placeholder="e.g. 2.5" step="0.5" min="0.5" />
+            </div>
+            <div class="form-group">
+              <label>Max Participants</label>
+              <input type="number" id="s-people" placeholder="e.g. 6" min="1" />
+            </div>
+            <div class="form-group">
+              <label>Price Range</label>
+              <input type="text" id="s-price" placeholder="e.g. 500,000–800,000 تومان" />
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <textarea id="s-desc" placeholder="What will participants learn or receive?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Session</button>
+          </form>
+        </div>
+
+        <h3 style="margin-bottom: 16px; color: #3d2b1f;">All Sessions</h3>
+        <div id="sessions-loading" class="loading">Loading...</div>
+        <table class="data-table hidden" id="sessions-table">
+          <thead>
+            <tr>
+              <th>ID</th><th>Title</th><th>Type</th><th>Master</th><th>Duration</th><th>Price</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="sessions-tbody"></tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

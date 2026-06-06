@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Master Profile — Kargah</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <span class="logo">Kar<span>gah</span></span>
+      <ul>
+        <li><a href="index.html">Browse Masters</a></li>
+        <li><a href="sessions.html">Sessions</a></li>
+        <li><a href="admin/login.html">Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="artisan-detail">
+    <div class="container">
+
+      <a href="index.html" class="back-link">Back to all masters</a>
+
+      <div id="loading" class="loading">Loading master profile...</div>
+
+      <div id="profile" class="hidden">
+
+        <div class="detail-header">
+          <div id="avatar" class="detail-avatar">🎨</div>
+          <div class="detail-info">
+            <h1 id="master-name">—</h1>
+            <span id="master-category" class="category-badge">—</span>
+            <div id="master-city" class="city">—</div>
+            <div id="master-exp" style="color:#888; font-size:0.9rem; margin-top:4px;"></div>
+          </div>
+        </div>
+
+        <div class="detail-bio">
+          <p id="master-bio">—</p>
+        </div>
+
+        <!-- Sessions offered by this master -->
+        <h3 style="margin: 28px 0 16px; color:#3d2b1f;">Sessions Offered</h3>
+        <div id="sessions-loading" class="loading" style="padding: 20px 0;">Loading sessions...</div>
+        <div id="sessions-grid" class="artisan-grid hidden"></div>
+        <div id="sessions-empty" class="empty-state hidden"><p>No sessions listed yet.</p></div>
+
+        <!-- Contact card -->
+        <div class="contact-card" style="margin-top: 32px;">
+          <h3>Get in Touch</h3>
+          <p>Have a question before booking? Email this master directly.</p>
+          <p style="margin-top: 8px;">Email: <a id="master-email" href="#">—</a></p>
+        </div>
+
+      </div>
+
+      <div id="not-found" class="empty-state hidden">
+        <p>Master not found.</p>
+        <a href="index.html" class="btn btn-primary mt-16" style="display:inline-block;">Go back</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Kargah &copy; 2026 — Connecting Iran's Craft Masters with Eager Learners</p>
+  </footer>
+
+  <script src="js/master.js"></script>
+</body>
+</html>

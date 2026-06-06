@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artisan — Kargah</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <span class="logo">Kar<span>gah</span></span>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="admin/login.html">Admin</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="artisan-detail">
+    <div class="container">
+
+      <a href="index.html" class="back-link">Back to all artisans</a>
+
+      <!-- Loading state -->
+      <div id="loading" class="loading">Loading artisan profile...</div>
+
+      <!-- Profile content — hidden until data is loaded -->
+      <div id="profile" class="hidden">
+
+        <div class="detail-header">
+          <div id="avatar" class="detail-avatar">🎨</div>
+
+          <div class="detail-info">
+            <h1 id="artisan-name">—</h1>
+            <span id="artisan-category" class="category-badge">—</span>
+            <div id="artisan-city" class="city">—</div>
+          </div>
+        </div>
+
+        <div class="detail-bio">
+          <p id="artisan-bio">—</p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Get in Touch</h3>
+          <p>Interested in this artisan's work? Send them a message.</p>
+          <p style="margin-top: 8px;">
+            Email: <a id="artisan-email" href="#">—</a>
+          </p>
+
+          <!-- TODO Week 9: replace the email link with a contact form -->
+        </div>
+
+      </div>
+
+      <!-- Not found state -->
+      <div id="not-found" class="empty-state hidden">
+        <p>Artisan not found.</p>
+        <a href="index.html" class="btn btn-primary mt-16" style="display:inline-block;">Go back</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Kargah &copy; 2026 — Preserving Iranian Craft Heritage</p>
+  </footer>
+
+  <script src="js/artisan.js"></script>
+</body>
+</html>
