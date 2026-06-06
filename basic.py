@@ -1,7 +1,4 @@
-score = 75
-if score > 90:
-    print("عالی")
-elif score > 60:
-    print("قبول")
-else:
-    print("مردود")
+numbers = [1, 2, 3, 4, 5]
+for number in numbers:
+    if number % 2 == 0:
+        print(number)
