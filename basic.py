@@ -1,8 +1,5 @@
-def reverse_list (numbers):
-    result = []
-    for number in reversed (numbers):
-        result.append(number)
-    return result
+def count_words(sentence):
+    words = sentence.split()
+    return len(words)
 
-numbers = [1, 2, 3, 4, 5, 6]
-print (reverse_list(numbers))
+print(count_words("سلام دنیا چطوری"))
