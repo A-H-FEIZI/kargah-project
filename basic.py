@@ -1,5 +1,8 @@
-def count_words(sentence):
-    words = sentence.split()
-    return len(words)
+def multiplay_list(numbers):
+    total=1
+    for number in numbers:
+        total *= number
+    return total
 
-print(count_words("سلام دنیا چطوری"))
+numbers = [6, 4, 8, 5, 9, 1]
+print(multiplay_list(numbers))
