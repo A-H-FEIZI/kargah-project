@@ -1,11 +1,8 @@
-def is_positive(n):
-    if n > 0:
-        return"مثبت"
-    elif n < 0:
-        return"منفی"
-    else:
-        return"صفر"
+def reverse_list (numbers):
+    result = []
+    for number in reversed (numbers):
+        result.append(number)
+    return result
 
-print(is_positive(5))
-print(is_positive(-3))
-print(is_positive(0))
+numbers = [1, 2, 3, 4, 5, 6]
+print (reverse_list(numbers))
