@@ -1,6 +1,11 @@
-def celsius_to_fahrenheit(c):
-    f = (c * 9/5) + 32
-    return f
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
 
-print(celsius_to_fahrenheit(0))
-print(celsius_to_fahrenheit(100))
+print(is_prime(7))
+print(is_prime(9))
+print(is_prime(2))
