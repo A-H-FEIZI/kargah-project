@@ -1,11 +1,8 @@
-def is_prime(n):
-    if n < 2:
-        return False
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-    return True
-
-print(is_prime(7))
-print(is_prime(9))
-print(is_prime(2))
+def flatten_list(arr):
+    result = []
+    for sublist in arr:
+        for number in sublist:
+            result.append(number)
+    return result
+    
+print(flatten_list([[1,2],[3,4],[5,6]]))
