@@ -1,12 +1,6 @@
-def fizzbuzz():
-    for number in range(1, 21):
-        if number % 3 == 0 and number % 5 == 0:
-            print("FizzBuzz")
-        elif number % 3 == 0:
-            print("Fizz")
-        elif number % 5 == 0:
-            print("Buzz")
-        else:
-            print(number)
+def celsius_to_fahrenheit(c):
+    f = (c * 9/5) + 32
+    return f
 
-fizzbuzz()
+print(celsius_to_fahrenheit(0))
+print(celsius_to_fahrenheit(100))
