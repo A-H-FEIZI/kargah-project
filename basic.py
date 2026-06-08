@@ -1,8 +1,12 @@
-def multiplay_list(numbers):
-    total=1
-    for number in numbers:
-        total *= number
-    return total
+def fizzbuzz():
+    for number in range(1, 21):
+        if number % 3 == 0 and number % 5 == 0:
+            print("FizzBuzz")
+        elif number % 3 == 0:
+            print("Fizz")
+        elif number % 5 == 0:
+            print("Buzz")
+        else:
+            print(number)
 
-numbers = [6, 4, 8, 5, 9, 1]
-print(multiplay_list(numbers))
+fizzbuzz()
