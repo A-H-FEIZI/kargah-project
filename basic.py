@@ -1,8 +1,9 @@
-def sum_of_evens(numbers):
-    total = 0
-    for number in numbers:
-        if number % 2 == 0 :
-             total += number
-    return total
-numbers = [1, 2, 3, 4, 5, 6]
-print(sum_of_evens(numbers))        
+def count_vowels(word):
+    vowels = ["a", "e", "i", "o", "u"]
+    count = 0
+    for letter in word:
+        if letter in vowels:
+            count += 1
+    return count
+print(count_vowels("hello"))
+print(count_vowels("python"))
