@@ -1,17 +1,8 @@
-def grade(number) :
-    if number >= 90:
-        return "A"
-    elif number >= 80:
-        return "B"
-    elif number >= 70:
-        return "C"
-    elif number >= 60:
-        return "D"
-    else:
-        return "F"
+def repeat_streang(word, n):
+    result = ""
+    for i in range(n):
+        result += word
+    return result
 
-print(grade(95))
-print(grade(85))
-print(grade(75))
-print(grade(65))
-print(grade(45))
+print(repeat_streang("amir", 2))
+print(repeat_streang("zahra", 3))
