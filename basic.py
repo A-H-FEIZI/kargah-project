@@ -1,12 +1,17 @@
-def calculator(a, b, op):
-    if op == "+":
-        return a + b
-    elif op == "-":
-        return a - b
-    elif op == "*":
-        return a * b
-    elif op == "/":
-        return a / b
+def grade(number) :
+    if number >= 90:
+        return "A"
+    elif number >= 80:
+        return "B"
+    elif number >= 70:
+        return "C"
+    elif number >= 60:
+        return "D"
+    else:
+        return "F"
 
-for op in ["+", "-", "*", "/"]:
-    print(f"10 {op} 5 = {calculator(10, 5, op)}")
+print(grade(95))
+print(grade(85))
+print(grade(75))
+print(grade(65))
+print(grade(45))
