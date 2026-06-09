@@ -1,9 +1,9 @@
-def count_vowels(word):
-    vowels = ["a", "e", "i", "o", "u"]
-    count = 0
-    for letter in word:
-        if letter in vowels:
-            count += 1
-    return count
-print(count_vowels("hello"))
-print(count_vowels("python"))
+def longest_word(sentence):
+    words = sentence.split()
+    longest = ""
+    for word in words:
+        if len(word) > len(longest):
+            longest = word
+    return longest
+
+print(longest_word("سلام دنیا چطوری"))
