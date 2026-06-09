@@ -1,9 +1,12 @@
-def longest_word(sentence):
-    words = sentence.split()
-    longest = ""
-    for word in words:
-        if len(word) > len(longest):
-            longest = word
-    return longest
+def calculator(a, b, op):
+    if op == "+":
+        return a + b
+    elif op == "-":
+        return a - b
+    elif op == "*":
+        return a * b
+    elif op == "/":
+        return a / b
 
-print(longest_word("سلام دنیا چطوری"))
+for op in ["+", "-", "*", "/"]:
+    print(f"10 {op} 5 = {calculator(10, 5, op)}")
