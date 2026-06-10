@@ -1,6 +1,9 @@
-def second_largest(number):
-    largest = max(number)
-    number.remove(largest)
-    return max(number)
+def is_anagram(word1, word2):
+    if sorted(word1) == sorted(word2):
+        return True
+    else:
+        return False
 
-print(second_largest([3, 5, 6, 8, 2]))
+print(is_anagram("amir", "rima"))
+print(is_anagram("amir", "mari"))
+print(is_anagram("amir", "hello"))
