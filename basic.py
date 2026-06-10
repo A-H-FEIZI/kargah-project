@@ -1,8 +1,6 @@
-def repeat_streang(word, n):
-    result = ""
-    for i in range(n):
-        result += word
-    return result
+def second_largest(number):
+    largest = max(number)
+    number.remove(largest)
+    return max(number)
 
-print(repeat_streang("amir", 2))
-print(repeat_streang("zahra", 3))
+print(second_largest([3, 5, 6, 8, 2]))
