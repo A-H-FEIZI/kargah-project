@@ -11,9 +11,17 @@ class Master:
     def add_session(self, session_type, price):
         self.sessions.append({"type": session_type, "price": price})
 
+def get_city(master_dict):
+    try:
+        return master_dict["city"]
+    except KeyError:
+        return "شهر وارد نشده"
+
 hossein = Master("حسین کلهر", "تهران", "قالی‌بافی")
 hossein.add_session("studio", "500,000 تومان")
 hossein.add_session("سیار", "800,000 تومان")
 
 print(hossein.describe())
 print(hossein.sessions)
+print(get_city({"name": "علی"}))
+print(get_city({"name": "علی", "city": "تهران"}))
